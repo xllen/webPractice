@@ -1,3 +1,24 @@
-<p>
-  carousel works!
-</p>
+<div class="carousel slide" data-ride="carousel" id="imgShow" style="margin-top: 50px">
+    <ol class="carousel-indicators">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="http://p1.meituan.net/mmc/05200dedfe05e78164106a038517a5f3179251.jpg" class="slide-image">
+      </div>
+      <div class="item">
+        <img src="http://p1.meituan.net/mmc/8e7b14365137f2cba215b711b776386c133777.jpg" class="slide-image">
+      </div>
+      <div class="item">
+        <img src="http://p0.meituan.net/mmc/a6746b37a2f3f77255b818da14e40002149666.jpg" class="slide-image">
+      </div>
+    </div>
+    <a href="javascript:$('#imgShow').carousel('prev')" class="left carousel-control">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a href="javascript:$('#imgShow').carousel('next')" class="right carousel-control">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
