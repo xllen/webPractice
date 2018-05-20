@@ -3,12 +3,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { Routes,RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
 import { HotShowingComponent } from './hot-showing/hot-showing.component';
 import { MovieServiceService } from './movie-service.service';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { HomeComponent } from './home/home.component';
+
+const routeConfig:Routes =[
+  {path: '',component:HomeComponent},
+  {path:'movies/:movieId',component: MovieDetailComponent}
+]; 
 
 @NgModule({
   declarations: [
@@ -17,12 +25,15 @@ import { MovieServiceService } from './movie-service.service';
     CarouselComponent,
     FooterComponent,
     HotShowingComponent,
-    CarouselComponent
+    CarouselComponent,
+    MovieDetailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routeConfig)
   ],
   providers: [MovieServiceService],
   bootstrap: [AppComponent]
