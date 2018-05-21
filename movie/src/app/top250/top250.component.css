@@ -1,0 +1,46 @@
+.top250 {
+    margin-top: 60px;
+    height: 1500px;
+}
+.card-list {
+    height: 1450px;
+}
+.top250 .top250-card {
+    margin: 20px 150px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow .2s;
+}
+.top250 .top250-card:hover {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+}
+.top250 .top250-card img{
+    width: 80px;
+    height: 120px;
+} 
+.top250 .top250-card .top250-body {
+    padding-top: 20px;
+    position: relative;
+}
+.top250-body .score {
+    font-size: 40px;
+    color:#ffb400;
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    font-weight: 200;
+}
+.top250 .top250-card .rank {
+    position: absolute;
+    top: 40px;
+    left: -62px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 32px;
+    background-color:rgba(0,0,0,.1);
+    color: #ffb400;
+    border-radius: 4px;
+}

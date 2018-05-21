@@ -12,10 +12,13 @@ import { HotShowingComponent } from './hot-showing/hot-showing.component';
 import { MovieServiceService } from './movie-service.service';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { HomeComponent } from './home/home.component';
+import { Top250Component } from './top250/top250.component';
+import {Ng2PaginationModule} from "ng2-pagination";
 
 const routeConfig:Routes =[
   {path: '',component:HomeComponent},
-  {path:'movies/:movieId',component: MovieDetailComponent}
+  {path:'movies/:movieId',component: MovieDetailComponent},
+  {path:'top250',component: Top250Component}
 ]; 
 
 @NgModule({
@@ -27,13 +30,15 @@ const routeConfig:Routes =[
     HotShowingComponent,
     CarouselComponent,
     MovieDetailComponent,
-    HomeComponent
+    HomeComponent,
+    Top250Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routeConfig)
+    RouterModule.forRoot(routeConfig),
+    Ng2PaginationModule
   ],
   providers: [MovieServiceService],
   bootstrap: [AppComponent]

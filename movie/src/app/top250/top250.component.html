@@ -1,0 +1,21 @@
+<div class="container top250">
+  <div class="card-list">
+    <div *ngFor="let top of top250 | paginate: { itemsPerPage: 10, currentPage: p }" class="top250-card" (click)="goMovie(top.id)">
+        <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object" [src]="top.images.small" alt="...">
+              </a>
+            </div>
+            <div class="media-body top250-body">
+              <h3 class="media-heading">{{top.title}}</h3>
+              <p>主演：<span *ngFor="let casts of top.casts">{{casts.name}}/</span></p>
+              <p>上映年限：{{top.year}}</p>
+              <p class="score">{{top.rating.average}}</p>
+            </div>
+        </div>
+        <div class="rank">{{top.index+1}}</div>
+    </div>
+  </div>
+  <pagination-controls previousLabel="上一页" nextLabel="下一页" (pageChange)="p = $event"></pagination-controls>
+</div>

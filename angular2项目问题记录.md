@@ -53,5 +53,28 @@
 
         npm run start
 
+## Angular2之 ng2-pagination 分页组件
+
+1. 通过npm安装此插件
+
+        npm install ng2-pagination --save
+
+2. app.module.ts主模块中添加此模块，并添加到imports
+
+        import {Ng2PaginationModule} from "ng2-pagination"
+
+        @NgModule({
+        imports: [
+                Ng2PaginationModule
+        ],
+
+3. 在需要分页的界面上
+
+        <div *ngFor="let top of top250 | paginate: { itemsPerPage: 10, currentPage: p }"></div>
+
+        <pagination-controls previousLabel="上一页" nextLabel="下一页" (pageChange)="p = $event"></pagination-controls>
+
+4. 在node_module文件下ng2-pagination的dist下的template.js中修改默认样式
+
 
 
