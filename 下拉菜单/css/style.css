@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+ul {
+    list-style: none;
+}
+.main {
+    width: 1076px;
+    height: 316px;
+    margin: 100px auto;
+    position: relative;
+    overflow: hidden;
+}
+.main .list{
+    width: 120px;
+    background-color: #1c1f21;
+    color: #ccc;
+    padding: 5px 0px 5px 20px;
+}
+.main .list p{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 2px;
+    padding-left: 5px; 
+}
+.main .list p.active {
+    background-color: #ccc;
+    color: #fff;
+}
+.main .list p:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+.main .mb,
+.main .list3{
+    width: 400px;
+    height: 220px;
+    position: absolute;
+    top: 0;
+    left: 140px;
+    background-color: #fff;
+    display: none;
+    z-index: 1000;
+    border: 1px solid #ccc;
+}
+.main .mb li,
+.main .list3 li{
+    width: 100%;
+    height: 220px;
+    display: none;
+}
+.main .mb li span {
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 2px;
+    padding-left: 5px;
+}
+.main .mb li.show {
+    display: block;
+}
+.main .list3 {
+    left: 540px;
+}
+.main .list3 li.show{
+    display: block;
+}
