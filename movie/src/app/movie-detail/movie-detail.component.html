@@ -1,0 +1,55 @@
+<div class="movie-info">
+
+
+<div *ngFor="let movieDesc of movieInfo">
+    <div class="jumbotron movie-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-3">
+              <img [src]="movieDesc.images.medium" alt="" style="margin-top: 10px">
+          </div>
+          <div class="col-md-8 col-sm-9">
+              <h2>{{movieDesc.title}}  {{movieDesc.original_title
+                }}</h2>
+              <p>导演：<a href="#" *ngFor="let dire of movieDesc.directors">{{dire.name}}/</a></p>
+              <p>主演：<a href="#" *ngFor="let casts of movieDesc.casts">{{casts.name}}/</a></p>
+              <p>类型：<span *ngFor="let genres of movieDesc.genres">{{genres}}/</span></p>
+              <p>制片国家：<span *ngFor="let countries of movieDesc.countries">{{countries}}</span></p>
+              <p>又名：<span *ngFor="let aka of movieDesc.aka">{{aka}}/</span></p>
+              <div style="font-size: 22px;font-weight: 100;margin-top: -16px;margin-bottom: 7px">
+                  <span>豆瓣评分：</span>
+                  <div id="star_con" class="star-vote">
+                      <span id="add_star" class="add-star"></span>
+                      <span id="del_star" class="del-star" [ngStyle]="starStyle"></span>
+                  </div>
+                  <span style="color:orange;font-size: 30px">{{movieDesc.rating.average}}</span>
+                  <span>({{movieDesc.ratings_count}}人评分)</span>
+              </div>
+              <p><span>想看：{{movieDesc.wish_count}}人</span><span style="margin-left: 20px">已看：{{movieDesc.collect_count}}人</span></p>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+        <div class="summary">
+            <p class="sm-title">{{movieDesc.title}}的剧情简介 · · · · · ·</p>
+            <p style="text-indent: 2em;">{{movieDesc.summary}}</p>
+        </div>
+        <div class="cast-photo">
+            <p class="cp-title">{{movieDesc.title}}的影人 · · · · · ·</p>
+            <div class="row">
+                <div *ngFor="let casts of movieDesc.casts" class="col-md-2" style="text-align: center">
+                <img [src]="casts.avatars.small" alt="">
+                <p>{{casts.name}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="comment">
+            <p class="cm-title">{{movieDesc.title}}的影评 · · · · · ·</p>
+            <p>由于权限问题，无法访问到评论！</p>
+        </div>
+    </div>      
+
+</div>
+</div>
